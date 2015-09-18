@@ -27,8 +27,8 @@ var submitCode = function (name) {
         output.innerHTML = "<p>" + eval(input) + "</p>";
     } else if (name === 'sql') {
         //Detta kollar om input är det som skulle behövas för att få tillbaka "Hello World!"; om det är, så visas "Hello World!" inuti en p-tag.
-        if (input === "SELECT 'Hello World!';") {
-            output.innerHTML = "<p>Hello World!</p>";
+        if (input === "SELECT 'Hello World';") {
+            output.innerHTML = "<p>Hello World</p>";
         }
     }
 };
