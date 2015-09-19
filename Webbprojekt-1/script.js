@@ -1,34 +1,71 @@
 var changeDiv = function (name) {
     //Sparar elementet med id "name" i div
-    var div = document.getElementById(name);
+    var div = document.getElementById(name),
+        menuItem = document.getElementById(name + "-menu"),
+        hiddenMenu = document.getElementById("nav"),
+        hiddenMenuList = document.getElementById("navList"),
+        prog = document.getElementById("prog");
 
     //Om divs klass inte är "active", så göms den föregående diven, och den nya visas
     if (div.className !== "active") {
-        var prev = document.getElementsByClassName("active")[0];
-        prev.style.display = "none";
-        prev.className = "";
-        div.className = "active";
-        div.style.display = "inline-block";
-    }
-};
+        var prev = document.getElementsByClassName("active")[0],
+            prevMenuItem = document.getElementById(prev.id + "-menu");
 
-var submitCode = function (name) {
-    //För att spara en massa utrymme, så sparas input och output som "namn + "In/Out"". T.ex. om namn = "html", så är input = "htmlIn"
-    var input = document.getElementById(name + "In").value;
-    var output = document.getElementById(name + "Out");
-    if (name === 'html') {
-        //Detta lägger bara input inuti diven
-        output.innerHTML = input;
-    } else if (name === 'css') {
-        //Detta lägger input inuti en style-tag i diven
-        output.innerHTML += "<style scoped> #cssOut " + input + "</style>";
-    } else if (name === 'js') {
-        //Detta lägger input inuti en p-tag och en eval() funktion.
-        output.innerHTML = "<p>" + eval(input) + "</p>";
-    } else if (name === 'sql') {
-        //Detta kollar om input är det som skulle behövas för att få tillbaka "Hello World!"; om det är, så visas "Hello World!" inuti en p-tag.
-        if (input === "SELECT 'Hello World!';") {
-            output.innerHTML = "<p>Hello World!</p>";
+        prev.style.display = "none";
+        prev.classList.remove("active");
+        prevMenuItem.style.color = "black";
+        prevMenuItem.style.opacity = 0.54;
+
+        div.classList.add("active");
+        div.style.display = "inline-block";
+        menuItem.style.color = "blue";
+        menuItem.style.opacity = 1;
+    }
+
+    if (div.id === "ch2" || div.id === "ch4" || div.id === "ch5") {
+        nav.style.display = "inline-block";
+        prog.style.display = "block";
+
+        var divIndex = [],
+            longDiv = div.id.substring(2, 3);
+        divIndex = document.getElementsByClassName(div.id + " anchor");
+        hiddenMenuList.innerHTML = "";
+
+        for(var i = 1; i <= divIndex.length; i++) {
+            hiddenMenuList.innerHTML += '<li><a href="#' + String(longDiv) + String(i) + '">' + divIndex[i - 1].id + '</a></li><br>';
         }
     }
+
+    else {
+        hiddenMenu.style.display = "none";
+        prog.style.display = "none";
+    }
+
+    scrolling = window.addEventListener("scroll", scrollPos);
 };
+
+var docHeight = function () {
+    var body = document.body,
+        html = document.documentElement;
+
+    return Math.max(body.scrollHeight, body.offsetHeight,
+                       html.clientHeight, html.scrollHeight, html.offsetHeight);
+}
+
+var scrollPos = function () {
+    var prog = document.getElementById("prog"),
+        max = docHeight() - window.innerHeight;
+
+    prog.setAttribute("value", window.scrollY);
+    prog.setAttribute("max", max);
+}
+
+var addEventList = function (i) {
+    document.getElementById("ch" + i + "-menu").addEventListener("click", function () {
+        changeDiv("ch" + i);
+    });
+};
+
+for (var i = 0; i <= 6; i++) {
+    addEventList(i);
+}

@@ -9,9 +9,10 @@
 
     <!--Hämtar teckensnittet Roboto från Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=normal"></script>
 
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
-    <script src="script.js" type="text/javascript" defer></script>
+    <script type="text/javascript" src="script.js" defer></script>
 </head>
 
 <body>
@@ -20,84 +21,427 @@
             <h1>Webbens historia</h1>
         </div>
     </div>
+    <progress id="prog" value="0"></progress>
     <div class="left">
         <div class="menu">
             <div class="container">
-                <h2>Menu</h2>
+                <h2>Innehåll</h2>
                 <ul>
                     <li>
-                        <a href="#" onclick="changeDiv('html')">HTML</a>
-                        <a href="#" onclick="changeDiv('css')">CSS</a>
-                        <a href="#" onclick="changeDiv('js')">JavaScript</a>
-                        <a href="#" onclick="changeDiv('sql')">SQL</a>
+                        <a href="#" id="ch0-menu">Webbens utveckling</a>
+                        <a href="#" id="ch1-menu">Hur kan man tala om webbens historia?</a>
+                        <a href="#" id="ch2-menu">Webbens historia ur användningsaspekt</a>
+                        <a href="#" id="ch3-menu">Webbstandard: Multipla plattformar och handikappanpassning</a>
+                        <a href="#" id="ch4-menu">"Jag vill ha en hemsida"</a>
+                        <a href="#" id="ch5-menu">Appendix: Utvecklingen av HTML, CSS och skriptspråk</a>
+                        <a href="#" id="ch6-menu">Efterord, till mina elever (och kanske andras)</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="content">
-        <div class="container">
-            <div id="first" class="active"></div>
-            <div id="html">
-                <h1>HTML</h1>
-                <p>HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to create web pages. Web browsers can read HTML files and render them into visible or audible web pages. HTML describes the structure of a website semantically along with cues for presentation, making it a markup language, rather than a programming language.
-                    <br>
-                    <br> HTML elements form the building blocks of all websites. HTML allows images and objects to be embedded and can be used to create interactive forms. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items.
-                    <br>
-                    <br> The language is written in the form of HTML elements consisting of tags enclosed in angle brackets. Browsers do not display the HTML tags and scripts, but use them to interpret the content of the page.
-                    <br>
-                    <br> HTML can embed scripts written in languages such as JavaScript which affect the behavior of HTML web pages. Web browsers can also refer to Cascading Style Sheets (CSS) to define the look and layout of text and other material. The World Wide Web Consortium (W3C), maintainer of both the HTML and the CSS standards, has encouraged the use of CSS over explicit presentational HTML since 1997.</p>
-                <textarea id="htmlIn" oninput="submitCode('html')"></textarea>
-                <div id="htmlOut" class="codeOut"></div>
-                <button type="button" onclick="submitCode('html')">Submit code</button>
+        <div id="nav">
+            <div class="container">
+                <ol id="navList"></ol>
             </div>
-            <div id="css">
-                <h1>CSS</h1>
-                <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language. Although most often used to change the style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any kind of XML document, including plain XML, SVG and XUL. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.
-                    <br>
-                    <br> CSS is designed primarily to enable the separation of document content from document presentation, including elements such as the layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple HTML pages to share formatting by specifying the relevant CSS in a separate .css file, and reduce complexity and repetition in the structural content, such as semantically insignificant tables that were widely used to format pages before consistent CSS rendering was available in all major browsers. CSS makes it possible to separate presentation instructions from the HTML content in a separate file or style section of the HTML file. For each matching HTML element, it provides a list of formatting instructions. For example, a CSS rule might specify that "all heading 1 elements should be bold", leaving pure semantic HTML markup that asserts "this text is a level 1 heading" without formatting code such as a tag indicating how such text should be displayed.
-                    <br>
-                    <br> This separation of formatting and content makes it possible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (when read out by a speech-based browser or screen reader) and on Braille-based, tactile devices. It can also be used to display the web page differently depending on the screen size or device on which it is being viewed. Although the author of a web page typically links to a CSS file within the markup file, readers can specify a different style sheet, such as a CSS file stored on their own computer, to override the one the author has specified. If the author or the reader did not link the document to a style sheet, the default style of the browser will be applied. Another advantage of CSS is that aesthetic changes to the graphic design of a document (or hundreds of documents) can be applied quickly and easily, by editing a few lines in one file, rather than by a laborious (and thus expensive) process of crawling over every document line by line, changing markup.
-                    <br>
-                    <br> The CSS specification describes a priority scheme to determine which style rules apply if more than one rule matches against a particular element. In this so-called cascade, priorities (or weights) are calculated and assigned to rules, so that the results are predictable.
-                    <br>
-                    <br> The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.</p>
-                <textarea id="cssIn" oninput="submitCode('css')"></textarea>
-                <div id="cssOut" class="codeOut">
-                    <h1>I'm a header</h1>
-                    <p>And I'm a paragraph</p>
-                </div>
-                <button type="button" onclick="submitCode('css')">Submit code</button>
-            </div>
-            <div id="js">
-                <h1>JavaScript</h1>
-                <p>JavaScript (/ˈdʒɑːvəˌskrɪpt/) is a high level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification. Alongside HTML and CSS, it is one of the three essential technologies of World Wide Web content production; the majority of websites employ it and it is supported by all modern web browsers without plug-ins. JavaScript is prototype-based with first-class functions, making it a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles. It has an API for working with text, arrays, dates and regular expressions, but does not include any I/O, such as networking, storage or graphics facilities, relying for these upon the host environment in which it is embedded.
-                    <br>
-                    <br> Despite some naming, syntactic, and standard library similarities, JavaScript and Java are otherwise unrelated and have very different semantics. The syntax of JavaScript is actually derived from C, while the semantics and design are influenced by the Self and Scheme programming languages.
-                    <br>
-                    <br> JavaScript is also used in environments that are not web-based, such as PDF documents, site-specific browsers, and desktop widgets. Newer and faster JavaScript virtual machines (VMs) and platforms built upon them have also increased the popularity of JavaScript for server-side web applications. On the client side, JavaScript has been traditionally implemented as an interpreted language, but more recent browsers perform just-in-time compilation. It is also used in game development, the creation of desktop and mobile applications, and server-side network programming with runtime environments such as Node.js.</p>
-                <textarea id="jsIn"></textarea>
-                <div id="jsOut" class="codeOut"></div>
-                <button type="button" onclick="submitCode('js')">Submit code</button>
-            </div>
-            <div id="sql">
-                <h1>SQL</h1>
-                <p>SQL (Structured Query Language) is a special-purpose programming language designed for managing data held in a relational database management system (RDBMS), or for stream processing in a relational data stream management system (RDSMS).
-                    <br>
-                    <br> Originally based upon relational algebra and tuple relational calculus, SQL consists of a data definition language, data manipulation language, and a data control language. The scope of SQL includes data insert, query, update and delete, schema creation and modification, and data access control. Although SQL is often described as, and to a great extent is, a declarative language (4GL), it also includes procedural elements.
-                    <br>
-                    <br> SQL was one of the first commercial languages for Edgar F. Codd's relational model, as described in his influential 1970 paper, "A Relational Model of Data for Large Shared Data Banks." Despite not entirely adhering to the relational model as described by Codd, it became the most widely used database language.
-                    <br>
-                    <br> SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987. Since then, the standard has been revised to include a larger set of features. Despite the existence of such standards, though, most SQL code is not completely portable among different database systems without adjustments.</p>
-                <textarea id="sqlIn"></textarea>
-                <div id="sqlOut" class="codeOut"></div>
-                <button type="button" onclick="submitCode('sql')">Submit code</button>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>Copyright 2015 André Vennberg</p>
             </div>
         </div>
     </div>
-    <div class="footer">
+    <div class="content" id="content">
         <div class="container">
-            <p>Copyright 2015 André Vennberg</p>
+            <div id="ch0" class="active">
+                <h2>Webbens utveckling</h2>
+
+                <p>En hemsida idag är inte längre en samling dokument man tittar på. Den är ett system där informationen skapas, flyttas och uppdateras i realtid, utifrån kopplingar till databaser och en mängd andra informationskällor.
+                    <br>
+                    <br> Webben år 2005 är inte vad den var år 2000 och år 2000 var webben inte detsamma som år 1995. När man pratar om att "göra hemsidor" eller "ha en hemsida" så är det därför väldigt viktigt att man inser att begreppet hemsida inte är detsamma nu som det var för några år sedan och att den kommer att ha förändrat sig igen om några år. Jag kommer här att beskriva utvecklingen innan jag drar några slutsatser för hur man bör gå till väga när man skapar webbsajter idag. Jag riktar mig i denna artikel inte till tekniker, utan till andra som har ansvar för hemsidor eller nybörjare som funderar på att "göra en hemsida". Mitt språk kommer därför att vara relativt fritt från tekniska termer, men det innebär också att det kommer att sakna den precision som en tekniskt bevandrad läsare skulle önska.
+                    <br>
+                    <br> År 1995 var det en ganska enkel sak att enas om vad det innebar att "ha en hemsida", idag är det vitt skilda saker som man kan mena med det begreppet. Den instans i samhället där insikten om webbens föränderlighet verkar ha svårast att slå rot är ironiskt nog skolan. Det sätt på vilket läroplanen är skriven i ämnet webbdesign är inte bra. Bland annat står där i betygskriterierna att "eleven fullgör sina arbetsuppgifter på ett i det närmaste professionellt sätt". Med den teknikutveckling som har skett bara de senaste tre åren är den formuleringen löjlig.</p>
+            </div>
+            <div id="ch1">
+                <h2>Hur kan man tala om webbens historia?</h2>
+
+                <p>Webben som vi idag känner den är en kombination av två grundläggande tekniker, samt ett stort antal tilläggstekniker. De två grunderna är <b><i><a href="http://en.wikipedia.org/wiki/HTTP">HTTP</a></i></b> och <b><i><a href="http://en.wikipedia.org/wiki/HTML">HTML</a></i></b>. Båda dessa utvecklades under det sena 80-talet och en bit in på 90-talet var webben nästan synonym med dessa två ord (plus <a href="http://en.wikipedia.org/wiki/DNS">DNS</a>). Tekniskt sett har det skett mycket, som sagt, men innan vi beskriver den utvecklingen så låt oss titta på de användningsområden hemsidor haft för att förstå vad som drivit teknikutvecklingen åt ett visst håll.
+                    <br>
+                    <br> Nu måste det dock sägas att ibland har det varit så att teknikföretagen velat skapa en marknad och därför drivit på just somliga tillämpningar. Just nu söker 3G-operatörerna få oss att tro att vi vill ha videosamtal. Man söker få avsättning för sin teknik och söker därför skapa ett behov. Det går trögt, men det visar ändå att det ofta är så att man sitter med en teknik först och skapar tillämpningen sedan.
+                    <br>
+                    <br> I princip är detta hela webbens historia. Ingen av dess upphovsmän hade en aning om vad det var de höll på att åstadkomma. Internet som fenomen förutsågs inte av någon enda person, varken man var datorkunnig, framtidsforskare, science-fictionförfattare eller vad man än var. Internet tog alla på sängen, också sådana som gjort karriär på att vara framsynta, som <a href="http://en.wikipedia.org/wiki/Steve_Jobs">Steve Jobs</a> (Apple) och <a href="http://en.wikipedia.org/wiki/Bill_Gates">Bill Gates</a> (Microsoft).</p>
+            </div>
+            <div id="ch2">
+                <h2>Webbens historia ur användningsaspekt</h2>
+
+                <a name="21" class="ch2 anchor" id="Webben som dokumentationssystem - pionjärernas era (90-93)"></a>
+                <h3>Webben som dokumentationssystem - pionjärernas era (90-93)</h3>
+
+                <p><i>I Januari 1991 sätts den första webbservern utanför CERN upp. Webben har fötts!</i>
+                    <br>
+                    <br> HTML och HTTP föddes vid <a href="http://en.wikipedia.org/wiki/CERN">CERN</a>. Där verkar stora mängder forskare. Det som skiljer forskare från andra skribenter är att man aldrig kan påstå något utan att det skall vara dokumenterat. Det klassiska är att man har fotnoter i sin text, men när texterna börjat hamna i datorer så visade det sig att systemet med <b><i><a href="http://en.wikipedia.org/wiki/Hyperlink">hyperlänkar</a></i></b> var överlägset. Ett klick så var man så att säga i noten.
+                    <br>
+                    <br> HTTP medförde att man kunde med länkar hänvisa till dokument som ligger på andra datorer. Länkar i sig har funnits före hemsidorna, men möjligheten att med en global standard länka från dator till dator över hela världen var revolutionerande.
+                    <br>
+                    <br> HTML hämtades från en annan teknik som heter <a href="http://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language">SGML</a>, som i sin tur används bl.a. av den amerikanska krigsmakten för att kunna datorisera manualer som kan skrivas ut vid behov i olika format.
+                    <br>
+                    <br> Från början var webbläsarna textbaserade och sidorna innehöll bara löpande text. Man kan faktiskt surfa på detta sätt än idag, exempelvis via webbläsaren <a href="https://en.wikipedia.org/wiki/Lynx_(web_browser)">Lynx</a>.</p>
+
+                <a name="22" class="ch2 anchor" id="Webben som text och bild - entusiasternas era (93-95)"></a>
+                <h3>Webben som text och bild - entusiasternas era (93-95)</h3>
+
+                <p>Tekniskt inträffade ingen större sak när webbläsaren <a href="http://en.wikipedia.org/wiki/Mosaic_%28browser%29">Mosaic</a> introducerades i april 1993, men det var en grafisk webbläsare och den kunde <a href="http://musiclub.web.cern.ch/MusiClub/bands/cernettes/firstband.html">visa bilder</a> blandat med texten. Detta ledde till att hemsidan som media blev omåttligt populär över natt på främst amerikanska universitet. I Januari 1993 finns det 50 webbservrar i hela världen. I oktober har antalet tiofaldigats. Mosaic släpptes i augusti samma år för Mac och Windows, vilket möjliggör vidare spridning.
+                    <br>
+                    <br> HTML-kodning var ännu lätt och snabbt började entusiaster skapa sidor om allt möjligt. Själv surfade jag exempelvis runt på sajter om Monthy Python vid denna tid. Eftersom sidorna gjordes av entusiaster, så kom man in på dem gratis, till skillnad från den information man kunde hämta på de andra globala informationssystemen, som <a href="http://en.wikipedia.org/wiki/CompuServe">Compuserve</a>, Prodigy och America Online. Gratismentaliteten är användarens välsignelse och somliga företags förbannelse. Hur skall man kunna ta betalt för det som andra erbjuder gratis?
+                    <br>
+                    <br> Än så länge är alla hemsidor helt <b><i>statiska</i></b>, dvs. någon har manuellt skrivit in texten och manuellt kodat in HTML-taggarna. Under denna era så börjar man komplettera denna statiska teknik med ett tillägg, CGI, som gör att man kan skapa HTML-kod "on the fly", samt på ett intelligent sätt hantera exempelvis ett ifyllt formulär.
+                    <br>
+                    <br> I juli 1994 bildas <a href="http://w3.org/">the World Wide Web Consortium" (W3C)</a> med syftet att samordna vidareutvecklingen av webbens tekniker. Det kommer dock att dröja tio år innan W3C blir en dominant faktor i utvecklingen. Först kommer två andra epoker.</p>
+
+                <a name="23" class="ch2 anchor" id="Webben som marknadsföring - Netscapes era (95-98)"></a>
+                <h3>Webben som marknadsföring - Netscapes era (95-98)</h3>
+
+                <p>13 oktober 1994 lanseras "Mosaic Netscape 0.9". I december 1994 lanseras <a href="http://en.wikipedia.org/wiki/Netscape_Navigator">Netscape Navigator"</a> version 1.0. Tack vare att dess grundare <a href="http://en.wikipedia.org/wiki/James_H._Clark">Jim Clark</a> behöver pengar till att bygga världens största segelbåt så introduceras företaget på börsen redan 9 augusti 1995. På mindre än ett dygn har företaget värderats till över en miljard dollar och det utan att man ännu haft några egentliga intäkter.
+                    <br>
+                    <br> Netscapes dramatiska succé blir modellen för en mängd andra uppstickare och man talar nu om den "nya ekonomin". Netscape kommer under de närmaste åren att i princip på egen hand diktera hur webben utvecklas, och det sker genom rasande snabb utveckling. Var åttonde månad skall en större uppgradering av webbläsaren släppas, vilket kan jämföras med att relativt mogna produkter som ordbehandlare släpps vart tredje år, och från 1995 till idag har det enbart rört sig om små putsningar på ytan i deras funktionalitet.
+                    <br>
+                    <br> Netscape introducerar i rasande fart tekniker som:</p>
+
+                <ul>
+                    <li>Frames (ramar) som kan dela upp en sida i flera mindre delar.</li>
+                    <li>Plug-ins (insticksprogram), som kan spela ljud (Real Audio), visa video (Quicktime) eller tillhandahålla interaktiva animationer (Shockwave).</li>
+                    <li>Javaskript, vilket tillåter hemsidan att bli mer dynamisk <b><i>till känslan</i></b>. Den är dock fortfarande statiskt lagrad på servern och uppdateras manuellt.</li>
+                    <li>Java som inbäddad applikation, dvs. ett regelrätt program skrivet i Java kan köras som en del av en hemsida. (Java och javaskript är inte samma sak.)</li>
+                </ul>
+
+                <p>Utanför entusiasternas krets så får hemsidan tjäna till marknadsföring. Man presenterar sitt företag (sin förening, sin skola, sin kyrka, sig själv…) och de varor man tillhandahåller.
+                    <br>
+                    <br> Marknadsföringsinriktningen får två konsekvenser. För det första så blir webben en tummelplats för <b><i>reklamfolk</i></b> och deras <a href="http://www.alistapart.com/articles/clickthru/">känsla</a> för det <a href="http://www.alistapart.com/articles/dao/"><b><i>nya</i></b> mediet</a> är inte helt lyckad. Målsättningen blir vacker grafik med exakt kontroll över utseendet. Man behandlar hemsidan som vore den en broschyr eller en affisch.
+                    <br>
+                    <br> Den andra konsekvensen är naturligtvis att man snabbt tänker tanken att när en vara presenterats på nätet så borde man också kunna genomföra affären på nätet. Man behöver med andra ord kunna genomföra en överföring av pengar på ett säkert sätt. Olika saker testas, men den viktigaste nya tekniken är <a href="http://en.wikipedia.org/wiki/HTTPS"><b><i>HTTPS</i></b></a>, HTTP med <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL-kryptering</a>.
+                    <br>
+                    <br> Ett nytt användningsområde för webbtekniken lanseras också under denna epok, ett användningsområde som på sätt och vis innebär en återgång till rötterna vid CERN: Intranätet. Rent tekniskt är ordet Intranät inte exakt definierat, men som slogan kan man säga att det lanserades av Netscape för att förmå företagen att använda sig av webbteknik (HTTP och HTML) för att hantera interna informationsbehov. Ungefär som man i CERN ville hålla koll på vetenskapliga arbeten.</p>
+
+                <a name="24" class="ch2 anchor" id="Exkurs: Browserkriget (96-99)"></a>
+                <h3>Exkurs: Browserkriget (96-99)</h3>
+
+                <p>År 1996 lanserar Microsoft Windows 95 OSR2 (en uppdatering av Windows 95). Den inkluderade webbläsaren, <a href="http://en.wikipedia.org/wiki/Internet_Explorer">Internet Explorer</a> (MSIE) version 3.0. Den är fortfarande underlägsen Netscape Navigator, men avståndet har minskat. Fram till denna version har MSIE varit ett skämt, jämförelsevis. Av bekvämlighet och för att Netscape nu börjar söka ta betalt av sina användare, så börjar några att använda MSIE i stället för Netscape.
+                    <br>
+                    <br> I oktober 1997 släpps version 4.0 och man har nu kommit ikapp Netscape rent tekniskt. Teknikerna för att skapa en hemsida med <b><i>känslan</i></b> av dynamik är så pass välutvecklad att marknadsföringen av både MSIE 4.0 och Netscape Navigator 4.0, som kommer några månader senare, främst riktar in sig på detta. Båda företagen pratar om <i><span title="Dynamic HTML">DHTML</span></i>, men detta är egentligen ingen ny teknik, utan bara ett samlingsnamn på tre tekniker i samverkan (HTML, <i><span title="Cascading Style Sheets">CSS</span></i> och javaskript). I och med lanseringen av MSIE 4.0 så är i princip Netscapes era över. Under något år talar man om "browserkriget", men utgången är given. Man betalar inte Netscape för att få en <b><i>likvärdig</i></b> webbläsare i stället för den man redan har i sin dator gratis.
+                    <br>
+                    <br> I september 1998 lanseras MSIE 5.0. Den är (totalt sett) bättre än allt Netscape kan erbjuda och browserkriget är definitivt avgjort. Netscape måste fortfarande stödjas av webbdesigners några år till, men avfasningen sker ändå relativt snabbt.
+                    <br>
+                    <br> Det skulle dröja ända till år 2004 innan Microsofts hegemoni skulle komma bli utmanad igen. I och med den succéartade lanseringen av Mozilla Firefox, så tappar MSIE marknadsandelar ganska snabbt. Om den trenden kommer stå sig kan bara framtiden utvisa, men på grund av MSIE idag föråldrade teknik och dåliga stöd för <a href="http://www.webstandards.org/"><b><i>webbstandarder</i></b></a> (se nedan) så är vi många som hoppas att MSIE kommer tappa än mer av marknaden. Eller att Microsoft gör en <b><i>rejäl</i></b> uppdatering av sin webbläsare. De i februari 2005 nya signalerna från Microsoft om en ny version, 7.0, verkar dock inte lovande. Man kan helt enkelt inte skriva om de grundläggande delarna av sin kod för att åstadkomma den uppryckning som behövs.</p>
+
+                <a name="25" class="ch2 anchor" id="Den interaktiva webben, webmasterns död (99-05)"></a>
+                <h3>Den interaktiva webben, webmasterns död (99-05)</h3>
+
+                <p>I webbens barndom var det oftast en person som stod för allt hemsidesarbete: Webmastern var den som valde ut och skrev informationen, han designade sidans layout och han skötte den teknik som behövdes för detta. Som "webmaster" krävdes det alltså en mångkunnighet.
+                    <br>
+                    <br> I takt med att den informationsmängd man velat ha på sina hemsidor ökat, stod det klart att webmasterns jobb måste börja fördelas på flera personer. Idag kan vi se tre skilda roller - och det är ytterst få förunnat att bemästra dem alla - nämligen informatören, teknikern och designern.
+                    <br>
+                    <br> Rent tekniskt innebär detta att man måste skapa system som möjliggör denna uppdelning. Informatören skall i princip inte behöva behärska mer än ordbehandling. Teknikern tillåts på nytt vara "nörd" och designern behöver inte bli datorexpert. Faktum är att designern i princip kan jobba med papper och penna.
+                    <br>
+                    <br> Dagens webbsajter är <b><i>dynamiska</i></b>, i ordets egentliga mening. Informationen skapas i samma stund du frågar efter den. Den lagras på olika ställen, främst i databaser och uppdateringen sker i realtid, dvs. i samma ögonblick som Christian Olsson hoppat i de olympiska spelen skall resultatet synas på hemsidan, i samma ögonblick antalet varor i lagret har ändrats så skall det synas på hemsidan.
+                    <br>
+                    <br> Dagens webb består av fem grundläggande tekniker:</p>
+
+                <ol>
+                    <li>Databashanteraren, dvs. det program som hanterar databasen.</li>
+                    <li>Serverbaserat skriptspråk, dvs. den programkod som kommunicerar med databasen och i realtid skapar hemsidan.</li>
+                    <li>HTTP, det protokoll som gör att webbläsaren kan kommunicera med webbservern, kanalen för informationsutbytet.</li>
+                    <li>(X)HTML, som i webbläsaren blir det sammanhållande kittet, där informationen integreras på ett sätt som blir användbart för användaren.</li>
+                    <li>CSS, Javaskript och DOM. De tekniker som styr det visuella intrycket och skapar "levande" effekter i hemsidan.</li>
+                </ol>
+
+                <p>De databasdrivna webbsajterna har utvecklats gradvis. Till en början hade man statiska hemsidor som <b><i>kompletterades</i></b> med dynamiska inslag, såsom:</p>
+
+                <ul>
+                    <li>Gästböcker</li>
+                    <li>Diskussionsforum</li>
+                    <li>Kalendrar</li>
+                    <li>Artikelsystem</li>
+                </ul>
+
+                <p>Runt år 2000 tog utvecklingen fart på allvar vad gäller s.k. "content-management systems" (CMS). <b><i>Idag köper man inte in en "hemsida" utan vad man köper är en CMS!</i></b> Du skall inte skaffa (eller göra) en uppsättning sidor, utan ett system för hantering av information.
+                    <br>
+                    <br> Genomslaget för CMS:er innebär att idag är hemsidor helt igenom dynamiska. Om man tittar på de fem "heta" områdena under år 2004 så ser man detta tydligt.</p>
+
+                <ul>
+                    <li>Banker - kanske inte känns så "hett" längre, men faktum är att internetbankerna har blivit en succé. För somliga användare är det så att man bara har sin uppkoppling till två saker: Banken och mejl.</li>
+                    <li>Communities - där Lunarstorm är det främsta exemplet. En community är inte bara en fråga om informationsutbyte, utan den är ett sätt att umgås. Folk träffar nya vänner och sina livspartners genom dessa. Det är idag inte längre uppseendeväckande när man "finner kärleken" på Internet!</li>
+                    <li>Spel - både pengaspel, som poker och vadslagning, sällskapsspel, som luffarschack eller Othello, samt spel man spelar på egen hand, oftast som en applikation i Flash eller Java. (Nästan alla regelrätta spel, som Counterstrike, kan man naturligtvis också spela över nätet, men de kräver som regel ingen webbteknik.)</li>
+                    <li><a href="https://en.wikipedia.org/wiki/Blog">Bloggar</a> - som kom att få sitt stora genombrott år 2004. År 1994 skulle man "ha en hemsida", idag "skall" man ha "en blogg". Blogg är en förkortning av webb-logg och innebär att man för en slags dagbok på nätet. Bloggarna är idag det främsta uttrycket för att Internet tillhör folket.</li>
+                    <li><a href="https://en.wikipedia.org/wiki/Wiki">Wikis</a> - främst <a href="http://en.wikipedia.org/">Wikipedia</a>. Tänk dig en encyklopedi där läsarna ständigt uppmuntras delta och skapa informationen. All världens entusiaster skapar ofta bättre produkter än vad experterna lyckas få fram. Och artiklarna uppdateras kontinuerligt. Många länkar i detta dokument går till Wikipedia.</li>
+                </ul>
+
+                <p>Wikis och communities är exempel på hur uppdelningen mellan informatör och tekniker möjliggjort att den som läser hemsidan själv skapar den! Informatören är användaren. Mer interaktiv än så kan en webbsajt knappast bli.
+                    <br>
+                    <br> Nätbanker, webbhandel och specialiserade söktjänster, typ Gula Sidorna, är också de exempel på att webben är interaktiv idag. Knappast någon blir upphetsad av en gästbok eller ett diskussionsforum som sådant. Interaktiviteten bör vara mer genomgripande för att räknas.
+                    <br>
+                    <br> En annan viktig användaraspekt i den interaktiva webben är de tjänster som tillhandahåller <b><i>skräddarsydd</i></b> information. Man går in på sin sida och får det urval nyheter, åsikter, sportnyheter, väderleksrapporter, etc. som passar just mig. Informationen är så oerhört riklig på nätet att alla uppskattar teknik som låter informationen komma till användaren i stället.
+                    <br>
+                    <br> På 90-talet talade man om "push", som skulle innebära att nyheter dök upp exempelvis direkt på windowsskrivbordet. För få hade ständig Internetuppkoppling, de flesta vill inte bli avbrutna med det de håller på med, etc. Men den grundläggande idén lever vidare på andra sätt. Det man för några år sedan kallade portaler har ersatts av <b><i>aggregatorer</i></b>. System som letar reda på den information du vill ha, sammanställer den och presenterar den just för dig.</p>
+
+                <a name="26" class="ch2 anchor" id="Den integrerade webben, webben som programkörningsmiljö (2005-)"></a>
+                <h3>Den integrerade webben, webben som programkörningsmiljö (2005-)</h3>
+
+                <p>I och med genombrottet för tekniker som <a href="http://en.wikipedia.org/wiki/XML">XML</a> och att andra tekniker som Javaskript har nått en större mognad, så har webbsajterna nått ännu en utvecklingsnivå. Morgondagens webbsajter har en <b><i>total integrering</i></b> med alla andra system. Bankerna är föregångare på detta. Om du går till en kassa på bankkontoret, till en uttagsautomat eller in på hemsidan spelar ingen roll. Du kommer åt samma konton och samma tjänster.
+                    <br>
+                    <br> CMS:en kommer så sakteliga att fasas över till det totalt integrerade systemet. Dagens CMS:er kommer i många fall att leva vidare och växa in i denna nya roll. Andra system kommer att skapas från grunden.
+                    <br>
+                    <br> Hemsidan i framtiden kommer inte bara skapas dynamiskt i det ögonblick du väljer att titta på den, utan den kommer att uppdateras dynamiskt <b><i>under tiden du tittar på den</i></b>. Nu pratar vi inte om dynamiska effekter typ 90-talets DHTML, alltså att det blinkar och rör på sig. Vi pratar inte heller om sidor som laddar om sig en gång varje minut eller något liknande. Vi pratar om sidor som beter sig som vore de datorprogram.
+                    <br>
+                    <br> Fyller man i ett formulär så jämförs det du skriver med referensinformation på webbservern inte bara när du klickar på "skicka", utan i realtid. Ett tidigt exempel på detta är Google suggest.
+                    <br>
+                    <br> Ett annat exempel på denna kommande era är "24-timmarsmyndigheten". På dess sajt så förklaras denna utveckling, fast med andra ord och specifikt för myndigheternas tillämpningar.
+                    <br>
+                    <br> Kort sagt: En webbsajt idag är inte en "hemsida", utan den är en <b><i>applikation</i></b>, en samling sammankittade program som integreras med hela verksamheten och alla andra datorsystem. Idag gör man inte hemsidor, utan man bygger system med webbteknik.
+                    <br>
+                    <br> I programmeringen talar man om "programkörningsmiljö" (RTE, Run Time Environment). Som programmerare behöver jag hålla reda på om mitt program skall köras på en Unix-maskin, med POSIX som RTE, eller om man skall köra den på Windows med "Win32" som RTE, eller på Macintosh där RTE:eerna har fantasifulla namn som "Carbon" och "Cocoa". Idag håller webben på att bli en RTE. De system som utvecklas är inte "hemsidor", utan en slags program vars byggstenar är webbtekniker.
+                    <br>
+                    <br> En nybörjare kan naturligtvis inte lära sig webbteknikerna med en gång för att åstadkomma ett sådant här system, men det sätt på vilket man lär sig grunderna bör vara anpassat så att man kan växa in i detta. Lär dig inte 90-talets tillvägagångssätt!</p>
+            </div>
+            <div id="ch3">
+                <h2>Webbstandard: Multipla plattformar och handikappanpassning</h2>
+
+                <p>Dagens webb måste vara <a href="http://www.w3.org/WAI/">tillgänglig</a> för alla. Den innehåller så mycket speciell information, så att den som exkluderats därigenom hamnar på undantag socialt sett. Det är därför av ytterstavikt att en sajt är handikappvänlig.
+                    <br>
+                    <br> Detta är naturligtvis också en fråga om människosyn. Väldigt många hemsidor som lär ut hur man gör hemsidor är föråldrade, liksom många böcker i ämnet. De skrevs för att passa gårdagens webbläsare. Man kan lätt byta ut sin webbläsare om man händelsevis är dum nog att sitta på MSIE 5.x eller (huga!) Netscape 4.x. De som tar del av webben via "text-to-speach" eller braille-terminaler har färre möjligheter. Dagens hemsidor måste passa också dessa. Allt annat är cyniskt.
+                    <br>
+                    <br> Nu är denna skara inte så stor, men de som börjar surfa via sina 3G-telefoner kommer snart vara desto fler. Detta är ytterligare en faktor som gör att man när man gör sina hemsidor bör följa <a href="https://en.wikipedia.org/wiki/Designing_with_Web_Standards"><b><i>webbstandarder</i></b></a> och tydligt skilja mellan layout och innehåll.
+                    <br>
+                    <br> En och samma HTML-kod skall alltså kunna fungera optimalt för mediet i fråga, oavsett om detta är en vanlig datorskärm med hög upplösning, en mobiltelefons lilla skärm med fåtaliga pixlar, en skrivare, en "text-to-speech-terminal" eller något annat.
+                    <br>
+                    <br> W3C, som jag berättade om tidigare är nu ledande i utvecklingen. De fungerar som standardiseringsorgan för HTML, XML, CSS och många andra tekniker. Till skillnad från 90-talets vilda västern era, då först Netscape och sedan Microsoft, ofta ganska ogenomtänkt introducerade olika tekniker på eget bevåg, så finns det idag ett organ som alla stora aktörer lovat följa, och som finansieras av alla de stora datorföretagen.</p>
+
+                <h3>Tekniska konsekvenser</h3>
+
+                <p>Begrepp kommer att förklaras mer i detalj i appendixet om teknikens utveckling.</p>
+
+                <ul>
+                    <li>En modern webbsajt skall kodas i HTML5. Man skall undvika <i><span title="Här: Egenutvecklad teknik som inte stöds av andras program">proprietära</span></i> tekniker.</li>
+                    <li>En modern webbsajt skall ha en fullständig separation mellan den kod som styr vad som sägs, och den kod som styr <b><i>hur det skall se ut</i></b>.</li>
+                    <li>En modern webbsajt skall vara mycket enkel att underhålla. Teknikerns jobb är att skapa förutsättningar för detta. Metoden för att skapa eller ändra på informationen skall vara intuitiv, eller i vart fall lättinlärd. (Frontpage räknas inte som en sådan "metod".)</li>
+                    <li>En modern webbsajt skall vara byggd i <b><i>flerskiktsarkitektur</i></b> och vara modulär. Man skall kunna flytta den mellan olika system med ett minimum av arbete och man skall kunna lägga på funktionalitet allteftersom. Den tekniska termen för detta är att lösningen kan <b><i>skala</i></b>, dvs. skalas upp (oftast) till att omfatta mer, utan att man behöver göra om den.</li>
+                    <li>Som en konsekvens av skalbarheten skall en modern webbsajt kunna skräddarsys för varje ny kund.</li>
+                    <li>En modern webbsajt bör åtminstone vara förberedd för integration med andra system: administrativa, informativa, ekonomiska, etc. Exempelvis borde inte en skola ha ett "schemaprogram" som en isolerad funktion. Man bör inte en hemsida för marknadsföring och sedan ha delvis samma information på ett eget intranät, utan att dessa båda i realtid uppdaterar varandra.</li>
+                </ul>
+            </div>
+            <div id="ch4">
+                <h2>"Jag vill ha en hemsida"</h2>
+
+                <p>Som framgått är detta uttryck numera i det närmaste meningslöst. Dagens "hemsidor" är <b><i>arbetsredskap</i></b> och en integrerad del av en helhetslösning.
+                    <br>
+                    <br> Är du bara intresserad av en enkel lösning för att sprida din åsikt eller dina funderingar. Strunta i att göra en "hemsida", utan sätt upp en blogg i stället. Be någon installera <a href="http://www.sixapart.com/movabletype/">Movable Type</a> eller något liknande åt dig och du är igång på fem minuter.
+                    <br>
+                    <br> Man måste i stället fråga säg vad man vill göra via sin hemsida. Här följer målspecifikationen för de tre system jag (Lars Gunther) jobbade med år 2005:</p>
+
+                <a name="41" class="ch4 anchor" id="Webbsystem för skolor"></a>
+                <h3>Webbsystem för skolor</h3>
+
+                <p>Webbplatsen skall:</p>
+
+                <ul>
+                    <li>Vara en del av skolans marknadsföring riktad till elever i årskurs nio.</li>
+                    <li>Presentera skolan för andra intresserade, vad gäller skolans mål, uppdrag, historia och annat.</li>
+                    <li>Skapa möjlighet att kontakta personalen, utan att de anställda skall behöva lära sig "ett system till".</li>
+                    <li>Integreras med så många informativa och administrativa system som möjligt, så att informationsinhämtningen underlättas (aggregering) och informationsspridningen aldrig innebär dubbelarbete. (En databas för telefonnummer och mejladresser för alla användningsområden, en databas för kalendariet, en databas över matsedeln, etc.) Den totala arbetsbördan skall minska genom att systemet tas i bruk, inte öka.</li>
+                    <li>Förmedla relevant information om inom olika nischer: Anti-drogarbetet, biblioteket, etc.</li>
+                </ul>
+
+                <a name="42" class="ch4 anchor" id="System för politiska lokalavdelningar och distrikt"></a>
+                <h3>System för politiska lokalavdelningar och distrikt</h3>
+
+                <p>Systemet skall:</p>
+
+                <ul>
+                    <li>Presentera avdelningen (distriktet) och ge en snabb översikt över vad man jobbar för och på vilken ideologisk grund man står.</li>
+                    <li>Presentera de förtroendevalda (mellan valen) och de på valsedlarna förekommande kandidaterna (till valen), så att man ser vad de har för uppdrag, vilka uppdrag de önskar få, och vad de står för var och en. Alla skall naturligtvis kunna kontaktas (utan att deras mejladresser avslöjas för spammare och andra oseriösa individer).</li>
+                    <li>Presentera vad man jobbar med och har åstadkommit. Detta inkluderar motioner man lagt, skrivelser, interpellationer och bloggar från dem som innehar uppdrag.</li>
+                    <li>Visa vilka evenemang som är på gång (sammanträden, samlingar, manifestationer, fester, etc.)</li>
+                    <li>Publicera pressmeddelanden, debattartiklar, insändare och annat.</li>
+                    <li>Erbjuda goda länkar som leder besökaren vidare till andra goda resurser, samt hjälper de egna medlemmarna hitta den information de behöver till sina uppdrag.</li>
+                    <li>Presentera vad medlemskap innebär och erbjuda möjligheten att bli medlem direkt via webben, med erforderliga kontroller.</li>
+                    <li>Ha en medlemsarea där man skall kunna ta del av intern information, kunna anmäla sig till medlemsevenemang. Kopplat till detta skall man kunna kontakta medlemmar via mejl eller SMS, enskilt eller i urval (exempelvis styrelsen eller KPA). Man kan komplettera medlemsarean med ett fotoalbum.</li>
+                    <li><b><i>Speciellt för Keryx system:</i></b> Varje lokalavdelnings sajt integreras med de andras och med distriktets, så att information delas mellan sajterna. Artiklar, evenemang och annat <b><i>aggregeras</i></b> så att varje avdelnings sida inkluderar relevant information från distriktet och närliggande avdelningar. I framtiden kan detta också komma att byggas ihop med partiets hemsida på riksnivå, förutsatt att det systemet blir modernare!</li>
+                </ul>
+
+                <p>Eftersom politik har en tendens att locka fram oseriösa och oftast anonyma inläggsskrivare bör systemet inte ha ett forum eller en gästbok. Eventuellt skulle man kunna bygga på med en frågespalt där man besvarar seriösa frågeställare och inte publicerar en fråga innan dess att den fått ett svar.
+                    <br>
+                    <br> En FAQ bör finnas som en del av den första punkten ovan, speciellt för att hjälpa skolelever snabbt hitta svar till sin arbeten.</p>
+
+                <a name="43" class="ch4 anchor" id="System för kyrkor och föreningar"></a>
+                <h3>System för kyrkor och föreningar</h3>
+
+                <p>Externt skall systemet:</p>
+
+                <ul>
+                    <li>Presentera verksamhetens grundvalar och ideologin (tron).</li>
+                    <li>Presentera de olika verksamheterna.</li>
+                    <li>Ha en kalenderfunktion för att visa vad som händer. I framtiden kommer denna kalenderfunktion antagligen byggas ut till att bli en också ett redskap i planeringen av verksamheten.</li>
+                    <li>Presentera ansvariga ledare och erbjuda möjlighet att kontakta dem.</li>
+                    <li>Presentera artiklar och/eller bloggar.</li>
+                </ul>
+
+                <p>Internt skall systemet:</p>
+
+                <ul>
+                    <li>Erbjuda en enkel community-känsla, med möjlighet att skicka meddelanden till andra användare.</li>
+                    <li>Ha en personlig sida för alla användare där just de aktiviteter och meddelanden som berör honom eller henne <b><i>aggregeras</i></b>. På ett överskådligt sätt skall man se vad som gäller just mig.</li>
+                    <li>Erbjuda möjlighet till omröstningar eller "gallupundersökningar".</li>
+                    <li>Ha ett fotoalbum med bilder från olika aktiviteter.</li>
+                    <li>Ha ett diskussionsforum.</li>
+                    <li>Erbjuda möjlighet att anmäla sig till aktiviteter.</li>
+                    <li>Erbjuda möjligheten att kontakta alla registrerade användare, alla som deltar i en viss verksamhet eller alla som anmält sig till/deltog i en viss aktivitet.</li>
+                </ul>
+            </div>
+            <div id="ch5">
+                <h2>Appendix: Utvecklingen av HTML, CSS och skriptspråk</h2>
+
+                <p>En hemsidas grundläggande del är <span title="Hyper Text Markup Language">HTML</span>. HTML i sin tur är ett sätt att markera vad slags information man förmedlar genom att omge text med s.k. taggar. Det kan se ut så här:</p>
+
+                <div class="codeOut">
+                    <p>
+                        <code class="prettyprint">
+                            &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&quot;http://www.w3.org/TR/HTML4/loose.dtd&quot;&gt;
+                        <br> &lt;html&gt;
+                        <br> &lt;head&gt;
+                        <br> &nbsp;&nbsp;&lt;title&gt;Sidans rubrik h&#228;r&lt;/title&gt;
+                        <br>
+                        <br> &nbsp;&nbsp;&lt;style type=&quot;text/CSS&quot;&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;@import &quot;stylenormal.php&quot;
+                        <br> &nbsp;&nbsp;&lt;/style&gt;
+                        <br> &lt;/head&gt;
+                        <br> &lt;body&gt;
+                        <br> &nbsp;&nbsp;&lt;h1&gt;Rubrik h&#228;r&lt;/h1&gt;
+                        <br> &nbsp;&nbsp;&lt;p&gt;Text h&#228;r. Lorem ipsum etc.&lt;/p&gt;
+                        <br>
+                        <br> &lt;/body&gt;
+                        <br> &lt;/html&gt;
+                        </code>
+                    </p>
+                </div>
+                <p>Först skall det komma en doctype. Den talar om vad slags HTML man använder.
+                    <br>
+                    <br> Sedan följer taggen &lt;html&gt;. Den inringar hela det egentliga dokumentet och kallas därför för <i><span title="Dokumentroten, som inringar allt annat">rot-element</span></i>.
+                    <br>
+                    <br> Taggen &lt;head&gt; ringar in det information som beskriver dokumentet i stort. Taggen &lt;body&gt; vad som skall stå i själva dokumentets text- och bilddel.
+                    <br>
+                    <br> Taggen &lt;h1&gt; inringar huvudrubriken på sidan. Taggen &lt;title&gt; i head-delen inringar det som skall stå på den (vanligtvis) blå raden längst upp i webbläsarfönstret.
+                    <br>
+                    <br> Taggen &lt;p&gt; utläses "paragraph" och inringar ett stycke.
+                    <br>
+                    <br> Taggar kan ha <i><span title="Attribut skrivs i taggen och kan förmedla ytterlogare information eller styra funktionen">attribut</span></i>, exempelvis så här: &lt;img src=&quot;ego.jpg&quot; alt=&quot;Bild p&#229; mig i bastkjol&quot; /&gt; Detta läser jag ut som att här skall det visas en bild (img). Bilden ifråga är "ego.jpg" som kan antas vara en bild på författaren i jpeg-format. Detta anges med attributet "src", som utläses "source" (källa). De som inte kan se bilden skall i stället få en beskrivning av den, en <b><i>alternativtext</i></b>, som anges med attributet "alt".
+                    <br>
+                    <br> Nu vet du tillräckligt mycket för att vi skall kunna beskriva hemsidans utveckling ur <b><i>kodningsperspektiv</i></b>.</p>
+
+                <a name="51" class="ch5 anchor" id="HTML 1.0 - taggarna uttrycker språklig logik"></a>
+                <h3>HTML 1.0 - taggarna uttrycker språklig logik</h3>
+
+                <p>I webbens barndom var webbläsarna som sagt inte grafiska. En rubrik på högsta nivå (&lt;h1&gt;) blev inte större än underrubriker eller vanlig text. I och med att Mosaic lanserades ändrades detta. Man valde att markera rubriknivåer med att göra texten olika stor (som i detta dokument).</p>
+
+                <a name="52" class="ch5 anchor" id="Marknadsförings/Netscape-eran - taggarna får grafiska funktioner"></a>
+                <h3>Marknadsförings/Netscape-eran - taggarna får grafiska funktioner (glöm alla koder i detta stycke!)</h3>
+
+                <p>När marknadsförarna kom in i bilden började de som sagt efterlysa grafisk kontroll. Man skulle som designer kunna styra val av typsnitt (&lt;font family=&quot;Verdana, sans-serif&quot;&gt;), sidans bakgrundsfärg (&lt;body bgcolor=&quot;#124321&quot;&gt;), etc.
+                    <br>
+                    <br> Man lade alltså till nya taggar som enbart hade grafisk funktion. Man gav befintliga taggar nya attribut, också med grafisk funktion. Mängden HTML man behövde kunna för att göra en hemsida svällde över alla breddar. Av det skälet började många göra sina hemsidor i program som Adobe Pagemill (idag Go-Live), Macromedia Dreamweaver eller Microsoft Frontpage. Själv föredrog jag Netobjects Fusion.
+                    <br>
+                    <br> Dessa program erbjöd utöver <a href="http://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a>, att man kunna använda mallar som styrde alla i sajten ingående sidors utseende och att länkar i exempelvis menyer uppdaterades automatiskt på alla sidor allteftersom man skapade nya sidor eller tog bort.
+                    <br>
+                    <br> Alla sajter som gjordes under denna era gjorde också något annat, och vida mycket värre än att använda grafisk HTML-kod. Man <b><i>missbrukade</i></b> taggar så att de skapade en viss effekt. Tabeller användes för att strukturera sidorna. Rubriker valdes utifrån önskad textstorlek, inte utifrån vilken logisk nivå man egentligen befann sig på.
+                    <br>
+                    <br> Också jag "syndade" på den här tiden och också de som <b><i>utvecklade</i></b> WYSIWYG-programmen tänkte helt grafiskt. Dessa program skapade - och skapar än idag - som regel än värre kod än vad det blir när man kodar för hand.</p>
+
+                <a name="53" class="ch5 anchor" id="Generation fyra av webbläsarna - taggarna <i>kompletteras</i> med CSS"></a>
+                <h3>Generation fyra av webbläsarna - taggarna <i>kompletteras</i> med CSS</h3>
+
+                <p>HTML visade sig snabbt ha flera inbyggda begränsningar för att styra layouten. Visionärerna hade börjat fundera på ett sätt att renodla tekniken, så att man skulle använda <b><i>stilmallar</i></b>, Cascading Style Sheets, för att styra det visuella och låta HTML-koden återgå till att markera språklig logik.
+                    <br>
+                    <br> Till en början innebar dock lanseringen av CSS att man kom ur askan i elden. Under DHTML-åren på slutet av 90-talet blandade man in CSS utan tanke i sin fortfarande grafiskt orienterade gröt av HTML-taggar. Eländet gick under namnet <b><i>HTML 3.2</i></b>.
+                    <br>
+                    <br> Att uppdatera en sajt för hand var i det närmaste omöjligt på den här tiden. Koden var så grötig, med tabeller som låg i en annan tabell inuti en tredje tabell. Till detta kom en stor uppsjö taggar och en massa olika attribut till dem - och ovanpå detta CSS. Ville man dessutom gå Microsoft och Netscape till mötes så skulle man dessutom ha javaskript för att våga kalla sin kreation "<span title="Dynamic HTML">DHTML</span>".
+                    <br>
+                    <br> Som om inte detta vore nog. MSIE och Netscape Navigator tolkade koderna olika och man var i princip tvungen att skriva dubbla uppsättningar av allt. Speciellt javaskripten blev eländiga.
+                    <br>
+                    <br> Två saker måste hända för att det skulle bli en slags ljus i änden på denna mörka tunnel. För det första så måste världens hemsidesmakare få tillgång till kraftfullare verktyg än första generationens CSS. I maj -98 så lanseras specifikationen för CSS 2.0. I och med att MSIE lanseras i version 5.0 (beta hösten -98, skarp version -99), så finns det också en webbläsare som kan hantera CSS 2.0 åtminstone hjälpligt.
+                    <br>
+                    <br> Sedan Microsoft avgick med segern över Netscape, så slutade man dock i princip utveckla sin webbläsare vidare, och idag är MSIE klart sämre än sina <a href="http://browsehappy.com/">konkurrenter</a>.</p>
+
+                <a name="54" class="ch5 anchor" id="HTML 4 och CSS 2"></a>
+                <h3>HTML 4 och CSS 2</h3>
+
+                <p>I och med att <a href="http://www.w3.org/TR/REC-html40/">specifikationen</a> till HTML 4 blev klar, så finns det en tydlig rekommendation om hur man bör skriva sin kod. Ett stort antal taggar, samt ett stort antal attribut till de kvarvarande taggarna är numera <b><i><span title="Nedvärderad är motsatsen till uppskattad (appreciated)">nervärderade</span></i></b> (deprecated). De finns kvar för att inte skapa en mjuk övergång från HTML 3.2, men <a href="http://www.w3.org/TR/REC-html40/sgml/loosedtd.html">bör undvikas</a>.
+                    <br>
+                    <br> Tack vare detta är det på nytt lätt att lära sig HTML. Det krångliga tycker de flesta i stället är att skriva CSS-kod. Och det är delvis rätt. Det tar ett litet tag innan man kommer in i systemet. Systemet är emellertid konsekvent och logiskt uppbyggt, så när man väl kommit över första inlärningströskeln rullar det på ganska enkelt.
+                    <br>
+                    <br> Det kvarvarande problemet med CSS är just att framför allt MSIE inte stödjer CSS 2.0 fullt ut, samt är <a href="http://www.quirksmode.org/index.html?/bugreports/">buggig</a> i sin tolkning av den CSS man faktiskt stödjer. Det hindrar inte att man idag helt och hållet bör gå över till CSS-baserad layout. Ur nästan varje perspektiv är det en överlägsen lösning.
+                    <br>
+                    <br> Det speciella med HTML 4 är alltså <b><i>separationen</i></b> mellan innehåll och design. HTML 4 i sin tur finns i tre versioner:</p>
+                <ul>
+                    <li>Strict. I denna version är alla nedvärderade attribut samt alla nedvärderade taggar förbjudna. Det finns också några regler kring vad hur text får förekomma och hur taggarna skall ligga i varandra. Dessa regler är ämnade att tvinga kodaren att skapa perfekt logisk kod. (Reglerna i sig räcker dock inte hela vägen till det.)</li>
+                    <li>Transitional. Lösare regler och nedvärderade taggar och attribut är tillåtna, men bör ändå undvikas. Som framgår av namnet är detta en slags HTML som endast skall användas för att möjliggöra en mjuk övergång från HTML 3.2.</li>
+                    <li>Frameset. Tillåter allt som "Transitional" gjorde, plus användningen av frames (ramar) på olika sätt, inklusive "&lt;iframe&gt;" och attributet "target". (OBS! Man kan använda taggen &lt;object&gt; i stället för &lt;iframe&gt; om man vill koda strikt.)</li>
+                </ul>
+
+                <p>CSS 2.0 skiljer sig från 1.0 främst genom möjligheten att dimensionera och positionera "boxar". Tillsammans med taggen &lt;div&gt;, så innebär detta att vi kan <a href="http://www.sitepoint.com/article/utopia-designing-tables-css">säga adjö till tabellen</a> som hjälpmedel för att skapa sidlayout.</p>
+
+                <a name="55" class="ch5 anchor" id="XML och XHTML"></a>
+                <h3>XML och XHTML</h3>
+
+                <p>HTML blev en makalös framgång, men ett antal viktiga saker saknades. Språket skapar sidor som webbläsaren tolkar och en människa kan se resultatet. Om däremot en maskin skall tolka sidan, så blir det svårare. För att skapa fler möjligheter så behövs det <b><i>tydligare och striktare regler</i></b>. XML är i likhet med HTML också en utveckling från SGML, men har en tydligare uppsättning regler för hur taggar skall ordnas och hur de skall skrivas.
+                    <br>
+                    <br> XHTML är HTML som uppfyller alla krav från XML. XHTML är HML och XML samtidigt. Element och attribut heter likadant som i HTML 4, men de måste skrivas enligt XML:s striktare regler. Detta innebär bland annat följande:</p>
+
+                <ul>
+                    <li>Taggar måste avslutas i omvänd ordning från deras påbörjande. &lt;em&gt;&lt;span&gt;xxx&lt;/span&gt;&lt;/em&gt; är ok. &lt;em&gt;&lt;span&gt;xxx&lt;/em&gt;&lt;/span&gt; är fel.</li>
+                    <li>Alla taggar måste avslutas. I HTML 4 är det frivilligt att avsluta exempelvis &lt;tr&gt;, &lt;td&gt; och &lt;p&gt;. I XHTML måste dessa och alla andra taggar avslutas. Taggar som inte inringar något skall påbörjas och avslutas samtidigt: &lt;br /&gt;, &lt;hr /&gt;, &lt;input type=&quot;text&quot; name=&quot;foo&quot; /&gt;. Slashen på slutet är ett kortare sätt att skriva exempelvis &lt;br&gt;, &lt;/br&gt;.</li>
+                    <li>Alla taggar och attributnamn måste skrivas med små bokstäver. &lt;EM&gt; är ok i HTML 4, men i XHTML måste man skriva &lt;em&gt;.</li>
+                    <li>Tecknet "&amp;" har en speciell funktion och får inte användas på något annat sätt. Vill man verkligen använda det som just tecknet &amp; måste man skriva det så här: "&amp;amp;" Detta gäller också om det är en del av en URL: &lt;a href=&quot;sida.php?foo=bar&amp;amp;fofo=barbar&quot;&gt;</li>
+                </ul>
+
+                <p>XHTML finns i flera versioner. 1.0 strict, 1.0 transitional och 1.0 frameset, vars tillåtna taggar och attribut är exakt desamma som för HTML 4. Dessutom finns det XHTML 1.1, som innebär att man delat upp XHTML 1.0 i moduler och har förbättrat stöd för bl.a. asiatiska språk.
+                    <br>
+                    <br> XHTML 2.0 var ett förslag på framtida standard som aldrig blev helt fastställd och som dessutom inte var att vara bakåtkompatibel med 1.x. Den slog aldrig rot. Mjuka övergångar brukar vara att föredra.</p>
+
+                <a name="56" class="ch5 anchor" id="HTML5/versionslös HTML"></a>
+                <h3>HTML5/versionslös HTML</h3>
+
+                <p>Snabbuppdatering: XHTML är nu också ett passerat stadium, som <a href="http://itpastorn.blogspot.se/2009/09/pedagogic-validation-of-html.html">hade sina poänger</a>. <b><a href="http://html5doctor.com/html5-living-standard/">HTML5/versionslös HTML</a> är det enda som bör användas efter år 2011</b>. Vad som exakt menas med HTML5 är en fråga som kräver ett eget dokument att reda ut. Det finns en teknisk innebörd, men <a href="http://www.brucelawson.co.uk/2010/meet-newt-new-exciting-web-technologies/">de flesta använder termen slarvigt</a>.</p>
+
+                <a name="57" class="ch5-anchor" id="Javaskript och DOM"></a>
+                <h3>Javaskript och DOM</h3>
+
+                <p>Införandet av webbstandarder innebär att vi slipper utveckla alternativa javaskript för olika webbläsare. Idag måste vi dock skilja mellan MSIE och de andra (Firefox, Opera, Safari, m.fl.) Enormt många javaskript-skolor på nätet och i bokform lär ut 90-talets javaskript. Här har saker hänt och för den som utvecklar en hemsida idag är dessa gamla artiklar snarast att betrakta som desinformation.
+                    <br>
+                    <br> En god regel är att om den sida du läser om inte inkluderar en någorlunda moderna gecko-baserad webbläsare i det som den ämnar stödja, så är sidan föråldrad. Netscape 6 eller 7, Mozilla eller Firefox bör nämnas i texten.
+                    <br>
+                    <br> 90-talets javaskript innebar att man hade ett sätt att skapa dokumentinnehåll genom kommandot "document.write". Detta kommando så att säga skrev i dokumentfönstret. Idag håller vi på att gå över till ett annat sätt som bygger på "the Document Object Model" (DOM).
+                    <br>
+                    <br> Somliga tror att år 2005 så kommer DOM vara den hetaste klientsidestekniken av alla.</p>
+
+                <a name="58" class="ch5 anchor" id="Serverbaserade skript"></a>
+                <h3>Serverbaserade skript</h3>
+
+                <p>Klientsidan innebär webbläsaren. Ett skript som körs på klientsidan, oftast javaskript (med DOM-kommandon), skickas alltså i sin helhet från server till webbläsare, sedan utförs kommandona. Serverbaserade skript å andra sidan utförs först på servern och <b><i>resultatet</i></b> skickas till klienten, webbläsaren.
+                    <br>
+                    <br> Moderna sajter bygger helt på denna teknik. Det ledande språket för att att skapa dynamiska sidor är PHP, följt av ASP-språken (VB och C#) och JSP. Även om JSP har en liten total marknadsandel, så är det vanligt hos de stora företagen för tunga affärskritiska uppgifter.
+                    <br>
+                    <br> Serverbaserade skript bör utformas så att tre skikt inom desamma kan urskiljas: Lagringslogik (databasabstraktion), affärslogik och presentationslogik.
+                    <br>
+                    <br> Det serverbaserade skriptspråket kan idag betraktas som ett slags kitt eller lim, som håller ihop sajtens alla informationskällor. Det kan hämta information i textfiler och i XML-dokument. Dessa kan i sin tur ligga på samma server eller på en maskin någon annanstans i världen. Med hjälp av SQL kan man hämta och lämna information i relationsdatabaser. Med hjälp av LDAP kan man göra det samma i katalogtjänster, som Active Directory. Dessa skriptspråk kan naturligtvis skicka mejl, men de kan också ta emot och bearbeta mejl. Rent tekniskt är det fullt möjligt att göra en lösning där man mejlar in nya sidor (eller delar av sidor) till en webbsajt.</p>
+            </div>
+            <div id="ch6">
+                <h2>Efterord, till mina elever (och kanske andras)</h2>
+
+                <p>Som företagare jobbar jag med dessa tekniker, som lärare vill jag lära ut de absoluta grunderna på ett sådant sätt att mina elever är <b><i>förberedda</i></b> på ett professionellt arbetssätt.
+                    <br>
+                    <br> Jag har <a href="http://keryx.se/blogg-20">på annan plats</a> klagat på bl.a. webbdesignskolan. Inte vet jag om det beror på mna klagomål eller inte, men helt plötsligt har det efter tre års inaktivitet dykt upp två nya artiklar. En om webbstandarder och en om XML och XHTML. Ironiskt nog är artikeln om webbstandarder fylld av kodfel. HTML-tidy räknar 64 stycken, varav flera är av typen "proprietära attribut". Artikeln om XHTML får 28 fel i HTML-tidy.
+                    <br>
+                    <br> I artikeln om webbstandard förklarar de varför de använder Dreamweaver för att göra sina sidor. Hela förklaringen tyder på att sajtens upphovsmän fortfarande befinner sig på 90-talet i sitt tänkande. Man har helt enkelt inte hängt med. Att systemet duger för deras egna behov innebär inte att det är ett föredömligt exempel för andra att ta efter.
+                    <br>
+                    <br> I denna artikel har jag talat mig varm för webbstandarder. Det finns de som har <a href="http://www.mikeindustries.com/blog/archive/2004/06/march-to-your-own-standard">en avvikande åsikt</a>, det vet jag. Min poäng är att så länge som man är nybörjare bör man definitivt skriva kod som <a href="https://validator.w3.org/">validerar</a> och följer standard. När du börjar bli duktig och vet <b><i>varför</i></b> du avviker från standarderna och exakt vad det får för <b><i>konsekvenser</i></b>, då kan du börja göra det. Och att bara kolla att det "fungerar" i din webbläsare, räknas inte som att du vet om konsekvenserna!</p>
+            </div>
         </div>
     </div>
 </body>
