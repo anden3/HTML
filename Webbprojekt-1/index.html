@@ -9,6 +9,7 @@
 
     <!--Hämtar teckensnittet Roboto från Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=normal"></script>
 
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
     <script type="text/javascript" src="script.js" defer></script>
@@ -20,6 +21,7 @@
             <h1>Webbens historia</h1>
         </div>
     </div>
+    <progress id="prog" value="0"></progress>
     <div class="left">
         <div class="menu">
             <div class="container">
@@ -37,8 +39,18 @@
                 </ul>
             </div>
         </div>
+        <div id="nav">
+            <div class="container">
+                <ol id="navList"></ol>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>Copyright 2015 André Vennberg</p>
+            </div>
+        </div>
     </div>
-    <div class="content">
+    <div class="content" id="content">
         <div class="container">
             <div id="ch0" class="active">
                 <h2>Webbens utveckling</h2>
@@ -61,6 +73,7 @@
             <div id="ch2">
                 <h2>Webbens historia ur användningsaspekt</h2>
 
+                <a name="21" class="ch2 anchor" id="Webben som dokumentationssystem - pionjärernas era (90-93)"></a>
                 <h3>Webben som dokumentationssystem - pionjärernas era (90-93)</h3>
 
                 <p><i>I Januari 1991 sätts den första webbservern utanför CERN upp. Webben har fötts!</i>
@@ -73,6 +86,7 @@
                     <br>
                     <br> Från början var webbläsarna textbaserade och sidorna innehöll bara löpande text. Man kan faktiskt surfa på detta sätt än idag, exempelvis via webbläsaren <a href="https://en.wikipedia.org/wiki/Lynx_(web_browser)">Lynx</a>.</p>
 
+                <a name="22" class="ch2 anchor" id="Webben som text och bild - entusiasternas era (93-95)"></a>
                 <h3>Webben som text och bild - entusiasternas era (93-95)</h3>
 
                 <p>Tekniskt inträffade ingen större sak när webbläsaren <a href="http://en.wikipedia.org/wiki/Mosaic_%28browser%29">Mosaic</a> introducerades i april 1993, men det var en grafisk webbläsare och den kunde <a href="http://musiclub.web.cern.ch/MusiClub/bands/cernettes/firstband.html">visa bilder</a> blandat med texten. Detta ledde till att hemsidan som media blev omåttligt populär över natt på främst amerikanska universitet. I Januari 1993 finns det 50 webbservrar i hela världen. I oktober har antalet tiofaldigats. Mosaic släpptes i augusti samma år för Mac och Windows, vilket möjliggör vidare spridning.
@@ -83,6 +97,7 @@
                     <br>
                     <br> I juli 1994 bildas <a href="http://w3.org/">the World Wide Web Consortium" (W3C)</a> med syftet att samordna vidareutvecklingen av webbens tekniker. Det kommer dock att dröja tio år innan W3C blir en dominant faktor i utvecklingen. Först kommer två andra epoker.</p>
 
+                <a name="23" class="ch2 anchor" id="Webben som marknadsföring - Netscapes era (95-98)"></a>
                 <h3>Webben som marknadsföring - Netscapes era (95-98)</h3>
 
                 <p>13 oktober 1994 lanseras "Mosaic Netscape 0.9". I december 1994 lanseras <a href="http://en.wikipedia.org/wiki/Netscape_Navigator">Netscape Navigator"</a> version 1.0. Tack vare att dess grundare <a href="http://en.wikipedia.org/wiki/James_H._Clark">Jim Clark</a> behöver pengar till att bygga världens största segelbåt så introduceras företaget på börsen redan 9 augusti 1995. På mindre än ett dygn har företaget värderats till över en miljard dollar och det utan att man ännu haft några egentliga intäkter.
@@ -106,6 +121,7 @@
                     <br>
                     <br> Ett nytt användningsområde för webbtekniken lanseras också under denna epok, ett användningsområde som på sätt och vis innebär en återgång till rötterna vid CERN: Intranätet. Rent tekniskt är ordet Intranät inte exakt definierat, men som slogan kan man säga att det lanserades av Netscape för att förmå företagen att använda sig av webbteknik (HTTP och HTML) för att hantera interna informationsbehov. Ungefär som man i CERN ville hålla koll på vetenskapliga arbeten.</p>
 
+                <a name="24" class="ch2 anchor" id="Exkurs: Browserkriget (96-99)"></a>
                 <h3>Exkurs: Browserkriget (96-99)</h3>
 
                 <p>År 1996 lanserar Microsoft Windows 95 OSR2 (en uppdatering av Windows 95). Den inkluderade webbläsaren, <a href="http://en.wikipedia.org/wiki/Internet_Explorer">Internet Explorer</a> (MSIE) version 3.0. Den är fortfarande underlägsen Netscape Navigator, men avståndet har minskat. Fram till denna version har MSIE varit ett skämt, jämförelsevis. Av bekvämlighet och för att Netscape nu börjar söka ta betalt av sina användare, så börjar några att använda MSIE i stället för Netscape.
@@ -116,6 +132,7 @@
                     <br>
                     <br> Det skulle dröja ända till år 2004 innan Microsofts hegemoni skulle komma bli utmanad igen. I och med den succéartade lanseringen av Mozilla Firefox, så tappar MSIE marknadsandelar ganska snabbt. Om den trenden kommer stå sig kan bara framtiden utvisa, men på grund av MSIE idag föråldrade teknik och dåliga stöd för <a href="http://www.webstandards.org/"><b><i>webbstandarder</i></b></a> (se nedan) så är vi många som hoppas att MSIE kommer tappa än mer av marknaden. Eller att Microsoft gör en <b><i>rejäl</i></b> uppdatering av sin webbläsare. De i februari 2005 nya signalerna från Microsoft om en ny version, 7.0, verkar dock inte lovande. Man kan helt enkelt inte skriva om de grundläggande delarna av sin kod för att åstadkomma den uppryckning som behövs.</p>
 
+                <a name="25" class="ch2 anchor" id="Den interaktiva webben, webmasterns död (99-05)"></a>
                 <h3>Den interaktiva webben, webmasterns död (99-05)</h3>
 
                 <p>I webbens barndom var det oftast en person som stod för allt hemsidesarbete: Webmastern var den som valde ut och skrev informationen, han designade sidans layout och han skötte den teknik som behövdes för detta. Som "webmaster" krävdes det alltså en mångkunnighet.
@@ -165,6 +182,7 @@
                     <br>
                     <br> På 90-talet talade man om "push", som skulle innebära att nyheter dök upp exempelvis direkt på windowsskrivbordet. För få hade ständig Internetuppkoppling, de flesta vill inte bli avbrutna med det de håller på med, etc. Men den grundläggande idén lever vidare på andra sätt. Det man för några år sedan kallade portaler har ersatts av <b><i>aggregatorer</i></b>. System som letar reda på den information du vill ha, sammanställer den och presenterar den just för dig.</p>
 
+                <a name="26" class="ch2 anchor" id="Den integrerade webben, webben som programkörningsmiljö (2005-)"></a>
                 <h3>Den integrerade webben, webben som programkörningsmiljö (2005-)</h3>
 
                 <p>I och med genombrottet för tekniker som <a href="http://en.wikipedia.org/wiki/XML">XML</a> och att andra tekniker som Javaskript har nått en större mognad, så har webbsajterna nått ännu en utvecklingsnivå. Morgondagens webbsajter har en <b><i>total integrering</i></b> med alla andra system. Bankerna är föregångare på detta. Om du går till en kassa på bankkontoret, till en uttagsautomat eller in på hemsidan spelar ingen roll. Du kommer åt samma konton och samma tjänster.
@@ -218,6 +236,7 @@
                     <br>
                     <br> Man måste i stället fråga säg vad man vill göra via sin hemsida. Här följer målspecifikationen för de tre system jag (Lars Gunther) jobbade med år 2005:</p>
 
+                <a name="41" class="ch4 anchor" id="Webbsystem för skolor"></a>
                 <h3>Webbsystem för skolor</h3>
 
                 <p>Webbplatsen skall:</p>
@@ -230,6 +249,7 @@
                     <li>Förmedla relevant information om inom olika nischer: Anti-drogarbetet, biblioteket, etc.</li>
                 </ul>
 
+                <a name="42" class="ch4 anchor" id="System för politiska lokalavdelningar och distrikt"></a>
                 <h3>System för politiska lokalavdelningar och distrikt</h3>
 
                 <p>Systemet skall:</p>
@@ -250,6 +270,7 @@
                     <br>
                     <br> En FAQ bör finnas som en del av den första punkten ovan, speciellt för att hjälpa skolelever snabbt hitta svar till sin arbeten.</p>
 
+                <a name="43" class="ch4 anchor" id="System för kyrkor och föreningar"></a>
                 <h3>System för kyrkor och föreningar</h3>
 
                 <p>Externt skall systemet:</p>
@@ -280,22 +301,24 @@
                 <p>En hemsidas grundläggande del är <span title="Hyper Text Markup Language">HTML</span>. HTML i sin tur är ett sätt att markera vad slags information man förmedlar genom att omge text med s.k. taggar. Det kan se ut så här:</p>
 
                 <div class="codeOut">
-                    <p>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&quot;http://www.w3.org/TR/HTML4/loose.dtd&quot;&gt;
+                    <p>
+                        <code class="prettyprint">
+                            &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&quot;http://www.w3.org/TR/HTML4/loose.dtd&quot;&gt;
                         <br> &lt;html&gt;
                         <br> &lt;head&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Sidans rubrik h&#228;r&lt;/title&gt;
+                        <br> &nbsp;&nbsp;&lt;title&gt;Sidans rubrik h&#228;r&lt;/title&gt;
                         <br>
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;style type=&quot;text/CSS&quot;&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@import &quot;stylenormal.php&quot;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;
+                        <br> &nbsp;&nbsp;&lt;style type=&quot;text/CSS&quot;&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;@import &quot;stylenormal.php&quot;
+                        <br> &nbsp;&nbsp;&lt;/style&gt;
                         <br> &lt;/head&gt;
                         <br> &lt;body&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Rubrik h&#228;r&lt;/h1&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Text h&#228;r. Lorem ipsum etc.&lt;/p&gt;
+                        <br> &nbsp;&nbsp;&lt;h1&gt;Rubrik h&#228;r&lt;/h1&gt;
+                        <br> &nbsp;&nbsp;&lt;p&gt;Text h&#228;r. Lorem ipsum etc.&lt;/p&gt;
                         <br>
                         <br> &lt;/body&gt;
                         <br> &lt;/html&gt;
+                        </code>
                     </p>
                 </div>
                 <p>Först skall det komma en doctype. Den talar om vad slags HTML man använder.
@@ -312,10 +335,12 @@
                     <br>
                     <br> Nu vet du tillräckligt mycket för att vi skall kunna beskriva hemsidans utveckling ur <b><i>kodningsperspektiv</i></b>.</p>
 
+                <a name="51" class="ch5 anchor" id="HTML 1.0 - taggarna uttrycker språklig logik"></a>
                 <h3>HTML 1.0 - taggarna uttrycker språklig logik</h3>
 
                 <p>I webbens barndom var webbläsarna som sagt inte grafiska. En rubrik på högsta nivå (&lt;h1&gt;) blev inte större än underrubriker eller vanlig text. I och med att Mosaic lanserades ändrades detta. Man valde att markera rubriknivåer med att göra texten olika stor (som i detta dokument).</p>
 
+                <a name="52" class="ch5 anchor" id="Marknadsförings/Netscape-eran - taggarna får grafiska funktioner"></a>
                 <h3>Marknadsförings/Netscape-eran - taggarna får grafiska funktioner (glöm alla koder i detta stycke!)</h3>
 
                 <p>När marknadsförarna kom in i bilden började de som sagt efterlysa grafisk kontroll. Man skulle som designer kunna styra val av typsnitt (&lt;font family=&quot;Verdana, sans-serif&quot;&gt;), sidans bakgrundsfärg (&lt;body bgcolor=&quot;#124321&quot;&gt;), etc.
@@ -328,6 +353,7 @@
                     <br>
                     <br> Också jag "syndade" på den här tiden och också de som <b><i>utvecklade</i></b> WYSIWYG-programmen tänkte helt grafiskt. Dessa program skapade - och skapar än idag - som regel än värre kod än vad det blir när man kodar för hand.</p>
 
+                <a name="53" class="ch5 anchor" id="Generation fyra av webbläsarna - taggarna <i>kompletteras</i> med CSS"></a>
                 <h3>Generation fyra av webbläsarna - taggarna <i>kompletteras</i> med CSS</h3>
 
                 <p>HTML visade sig snabbt ha flera inbyggda begränsningar för att styra layouten. Visionärerna hade börjat fundera på ett sätt att renodla tekniken, så att man skulle använda <b><i>stilmallar</i></b>, Cascading Style Sheets, för att styra det visuella och låta HTML-koden återgå till att markera språklig logik.
@@ -342,6 +368,7 @@
                     <br>
                     <br> Sedan Microsoft avgick med segern över Netscape, så slutade man dock i princip utveckla sin webbläsare vidare, och idag är MSIE klart sämre än sina <a href="http://browsehappy.com/">konkurrenter</a>.</p>
 
+                <a name="54" class="ch5 anchor" id="HTML 4 och CSS 2"></a>
                 <h3>HTML 4 och CSS 2</h3>
 
                 <p>I och med att <a href="http://www.w3.org/TR/REC-html40/">specifikationen</a> till HTML 4 blev klar, så finns det en tydlig rekommendation om hur man bör skriva sin kod. Ett stort antal taggar, samt ett stort antal attribut till de kvarvarande taggarna är numera <b><i><span title="Nedvärderad är motsatsen till uppskattad (appreciated)">nervärderade</span></i></b> (deprecated). De finns kvar för att inte skapa en mjuk övergång från HTML 3.2, men <a href="http://www.w3.org/TR/REC-html40/sgml/loosedtd.html">bör undvikas</a>.
@@ -359,6 +386,7 @@
 
                 <p>CSS 2.0 skiljer sig från 1.0 främst genom möjligheten att dimensionera och positionera "boxar". Tillsammans med taggen &lt;div&gt;, så innebär detta att vi kan <a href="http://www.sitepoint.com/article/utopia-designing-tables-css">säga adjö till tabellen</a> som hjälpmedel för att skapa sidlayout.</p>
 
+                <a name="55" class="ch5 anchor" id="XML och XHTML"></a>
                 <h3>XML och XHTML</h3>
 
                 <p>HTML blev en makalös framgång, men ett antal viktiga saker saknades. Språket skapar sidor som webbläsaren tolkar och en människa kan se resultatet. Om däremot en maskin skall tolka sidan, så blir det svårare. För att skapa fler möjligheter så behövs det <b><i>tydligare och striktare regler</i></b>. XML är i likhet med HTML också en utveckling från SGML, men har en tydligare uppsättning regler för hur taggar skall ordnas och hur de skall skrivas.
@@ -376,10 +404,12 @@
                     <br>
                     <br> XHTML 2.0 var ett förslag på framtida standard som aldrig blev helt fastställd och som dessutom inte var att vara bakåtkompatibel med 1.x. Den slog aldrig rot. Mjuka övergångar brukar vara att föredra.</p>
 
+                <a name="56" class="ch5 anchor" id="HTML5/versionslös HTML"></a>
                 <h3>HTML5/versionslös HTML</h3>
 
                 <p>Snabbuppdatering: XHTML är nu också ett passerat stadium, som <a href="http://itpastorn.blogspot.se/2009/09/pedagogic-validation-of-html.html">hade sina poänger</a>. <b><a href="http://html5doctor.com/html5-living-standard/">HTML5/versionslös HTML</a> är det enda som bör användas efter år 2011</b>. Vad som exakt menas med HTML5 är en fråga som kräver ett eget dokument att reda ut. Det finns en teknisk innebörd, men <a href="http://www.brucelawson.co.uk/2010/meet-newt-new-exciting-web-technologies/">de flesta använder termen slarvigt</a>.</p>
 
+                <a name="57" class="ch5-anchor" id="Javaskript och DOM"></a>
                 <h3>Javaskript och DOM</h3>
 
                 <p>Införandet av webbstandarder innebär att vi slipper utveckla alternativa javaskript för olika webbläsare. Idag måste vi dock skilja mellan MSIE och de andra (Firefox, Opera, Safari, m.fl.) Enormt många javaskript-skolor på nätet och i bokform lär ut 90-talets javaskript. Här har saker hänt och för den som utvecklar en hemsida idag är dessa gamla artiklar snarast att betrakta som desinformation.
@@ -390,6 +420,7 @@
                     <br>
                     <br> Somliga tror att år 2005 så kommer DOM vara den hetaste klientsidestekniken av alla.</p>
 
+                <a name="58" class="ch5 anchor" id="Serverbaserade skript"></a>
                 <h3>Serverbaserade skript</h3>
 
                 <p>Klientsidan innebär webbläsaren. Ett skript som körs på klientsidan, oftast javaskript (med DOM-kommandon), skickas alltså i sin helhet från server till webbläsare, sedan utförs kommandona. Serverbaserade skript å andra sidan utförs först på servern och <b><i>resultatet</i></b> skickas till klienten, webbläsaren.
@@ -411,11 +442,6 @@
                     <br>
                     <br> I denna artikel har jag talat mig varm för webbstandarder. Det finns de som har <a href="http://www.mikeindustries.com/blog/archive/2004/06/march-to-your-own-standard">en avvikande åsikt</a>, det vet jag. Min poäng är att så länge som man är nybörjare bör man definitivt skriva kod som <a href="https://validator.w3.org/">validerar</a> och följer standard. När du börjar bli duktig och vet <b><i>varför</i></b> du avviker från standarderna och exakt vad det får för <b><i>konsekvenser</i></b>, då kan du börja göra det. Och att bara kolla att det "fungerar" i din webbläsare, räknas inte som att du vet om konsekvenserna!</p>
             </div>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="container">
-            <p>Copyright 2015 André Vennberg</p>
         </div>
     </div>
 </body>
