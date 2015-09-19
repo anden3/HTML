@@ -7,11 +7,25 @@ var changeDiv = function (name) {
     if (div.className !== "active") {
         var prev = document.getElementsByClassName("active")[0];
         var prevMenuItem = document.getElementById(prev.id + "-menu");
+
         prev.style.display = "none";
-        prev.className = "";
+        prev.classList.remove("active");
         prevMenuItem.style.color = "black";
-        div.className = "active";
+        prevMenuItem.style.opacity = 0.54;
+
+        div.classList.add("active");
         div.style.display = "inline-block";
         menuItem.style.color = "blue";
+        menuItem.style.opacity = 1;
     }
 };
+
+var addEventList = function (i) {
+    document.getElementById("ch" + i + "-menu").addEventListener("click", function () {
+        changeDiv("ch" + i);
+    });
+};
+
+for (var i = 0; i <= 6; i++) {
+    addEventList(i);
+}
