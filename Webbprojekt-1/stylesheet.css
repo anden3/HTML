@@ -22,7 +22,7 @@
 }
 
 .left {
-	float: left;
+    float: left;
     height: 100%;
     width: 200px;
     position: fixed;
@@ -61,7 +61,15 @@
 }
 
 .menu ul a:hover {
-    color: grey;
+    opacity: 1;
+}
+
+.menu ul a:active {
+    color: darkblue;
+}
+
+.menu ul a:first-child {
+    color: blue;
 }
 
 .content {
@@ -70,19 +78,21 @@
     float: right;
     width: 80%;
     margin-top: 50px;
-    /*margin-left: 150px;*/
     margin-bottom: 50px;
+    margin-right: 5%;
+}
+
+.content p {
+    opacity: 0.87;
+}
+
+.content span {
+    cursor: help;
+    border-bottom: 1px dotted grey;
 }
 
 .content .container > div:not(#ch0) {
     display: none;
-}
-
-.content textarea {
-    height: 20%;
-    width: 40%;
-    display: inline-block;
-    box-shadow: rgba(0, 0, 0, 0.258824) 0px 3px 5px 0px;
 }
 
 .codeOut {
@@ -98,11 +108,6 @@
     margin: 2px;
 }
 
-.content button {
-    display: block;
-    margin-top: 10px;
-}
-
 .footer {
     width: 140px;
     height: auto;
@@ -110,7 +115,7 @@
     float: left;
     position: fixed;
     bottom: 0;
-    margin-left: -89.5%;
+    margin-left: 5px;
     font-size: 12px;
     opacity: 0.54;
 }
