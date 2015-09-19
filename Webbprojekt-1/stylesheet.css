@@ -21,7 +21,7 @@
 }
 
 progress {
-	position: fixed;
+    position: fixed;
     left: 0;
     top: 68px;
     width: 100%;
@@ -33,11 +33,11 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 progress::-webkit-progress-value {
-  background-color: red;
+    background-color: red;
 }
 
 .left {
@@ -132,17 +132,21 @@ progress::-webkit-progress-value {
     margin: 50px 5% 50px 0;
 }
 
-.content p {
+.content p,
+li,
+i,
+b,
+a {
     opacity: 0.87;
 }
 
-.content p > span {
+.help {
     cursor: help;
     border-bottom: 1px dotted grey;
 }
 
 .content .anchor {
-	display: block;
+    display: block;
     position: relative;
     top: -80px;
     visibility: hidden;
@@ -162,6 +166,6 @@ progress::-webkit-progress-value {
     background-color: white;
 }
 
-.codeOut * {
+.codeOut p {
     margin: 2px;
 }

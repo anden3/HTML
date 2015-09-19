@@ -36,12 +36,10 @@ var changeDiv = function (name) {
         hiddenMenuList.innerHTML = "";
 
         //Detta lägger till underrubrikerna till undermenyn.
-        for(var i = 1; i <= divIndex.length; i++) {
+        for (var i = 1; i <= divIndex.length; i++) {
             hiddenMenuList.innerHTML += '<li><a href="#' + String(longDiv) + String(i) + '">' + divIndex[i - 1].id + '</a></li><br>';
         }
-    }
-
-    else {
+    } else {
         //Om inte undermenyn och framstegsmätaren behövs, så göms dem.
         hiddenMenu.style.display = "none";
         prog.style.display = "none";
@@ -57,7 +55,7 @@ var docHeight = function () {
         html = document.documentElement;
 
     return Math.max(body.scrollHeight, body.offsetHeight,
-                       html.clientHeight, html.scrollHeight, html.offsetHeight);
+        html.clientHeight, html.scrollHeight, html.offsetHeight);
 }
 
 var scrollPos = function () {
